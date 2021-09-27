@@ -1,5 +1,0 @@
-FROM python:3.8-slim
-WORKDIR /ems_crawler
-COPY . .
-RUN pip install -r requirements.txt
-CMD ["python", "./crawler.py"]
