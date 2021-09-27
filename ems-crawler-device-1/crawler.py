@@ -39,7 +39,11 @@ while(True) :
         print('Connection Successful for '+date_today+' '+str(time_now)+' [UTC]')
 
         # FETCHING THE EMS DATA (DEVICE 1) AND SAVING IT
-        response=requests.get("http://iotbuilder.in/nit-dp/view.php?id=1")
+        HEADERS = {
+                    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36',
+                  }
+        url="http://iotbuilder.in/nit-dp/view.php?id=1"
+        response=requests.get(url,headers=HEADERS)
         with open("response.xls", "w") as f:
             f.write(response.text)
 
